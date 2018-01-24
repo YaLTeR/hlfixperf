@@ -1,0 +1,19 @@
+[package]
+name = "hlfixperf"
+version = "0.1.0"
+authors = ["Ivan Molodetskikh <yalterz@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+
+[dependencies]
+findshlibs = { git = "https://github.com/YaLTeR/findshlibs.git", branch = "fix-i686-crash" }
+libc = "*"
+xmas-elf = "*"
